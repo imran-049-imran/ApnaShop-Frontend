@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react";
 import "./Login.css";
 import { Link, useNavigate } from "react-router-dom";
 import loginImage from "@/assets/login.png";
-import { login } from "@/service/authService";
+import { login } from "@/Service/authService";
 import { StoreContext } from "@/context/StoreContext";
 import { toast } from "react-toastify";
 
