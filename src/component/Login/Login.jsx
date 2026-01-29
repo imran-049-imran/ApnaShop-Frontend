@@ -1,13 +1,13 @@
 import React, { useContext, useState } from "react";
 import "./Login.css";
 import { Link, useNavigate } from "react-router-dom";
-import loginImage from "../../assets/login.png";
-import { login } from "../../service/authService";
-import { StoreContext } from "../../context/StoreContext";
+import loginImage from "@/assets/login.png";
+import { login } from "@/service/authService";
+import { StoreContext } from "@/context/StoreContext";
 import { toast } from "react-toastify";
 
 const Login = () => {
-  const {setToken,loadCartData } = useContext(StoreContext);
+  const { setToken, loadCartData } = useContext(StoreContext);
   const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
@@ -40,7 +40,7 @@ const Login = () => {
         localStorage.setItem("token", response.data.token);
 
         toast.success("Login successful!");
-       await loadCartData(response.data.token);
+        await loadCartData(response.data.token);
         navigate("/");
       } else {
         toast.error("Unable to login. Try again.");
